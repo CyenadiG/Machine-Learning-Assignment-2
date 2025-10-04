@@ -11,18 +11,19 @@
 #Importing some Python libraries
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
-import numpy as np
+
 
 #Reading the data in a csv file using pandas
 db = []
 df = pd.read_csv('email_classification.csv')
 db = df.values.tolist()
 
+
+
 num_errors = 0
 num_samples = len(db)
 
-for _, row in df.iterrows():
-    db.append(row.tolist())
+
 
 #Loop your data to allow each instance to be your test set
 for i in range(num_samples):
@@ -55,7 +56,7 @@ for i in range(num_samples):
 
     #Compare the prediction with the true label of the test instance to start calculating the error rate.
     #--> add your Python code here
-
+   
     if class_predicted != true_label:
         num_errors += 1
 
@@ -64,6 +65,23 @@ for i in range(num_samples):
     #--> add your Python code here 
 error_rate = num_errors / num_samples
 print(f"Error rate: {error_rate:.2f}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
